@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>PizzaRadar - 362 Project</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <hr class="logoline" />
+      <div class="container">
+        <a class="logo" href="#"
+          ><span>PIZZA RADAR </span
+          ><img class="logoimg" src="/images/piz.png" alt="Pizza Icon"
+        /></a>
+        <a class="btn btn-primary" href="/login" id="navbutton">Login</a>
+        <a class="btn btn-primary" href="/register" id="navbutton">Register</a>
+      </div>
+      <hr class="logoline" />
+    </div>
+
+    <section class="nested">
+      <section class="location-section">
+        <div class="container">
+          <form action="" id="form">
+            <div class="lat-form">
+              <input
+                type="number"
+                autocomplete="on"
+                name="lattitude"
+                placeholder="Lattitude"
+              />
+            </div>
+            <div class="long-form">
+              <input
+                type="number"
+                autocomplete="on"
+                name="longitude"
+                placeholder="Longitude"
+              />
+            </div>
+            <button class="button" id="submit">Submit</button>
+            <input type="reset" /> <br />
+            <label for="sort">Sort By:</label>
+            <select id="sort" name="sort">
+              <option value="best_match">Best Match</option>
+              <option value="rating">Ratings</option>
+              <option value="review_count">Review Counts</option>
+              <option value="distance">Distance</option>
+            </select>
+            <div class="form-group">
+              <label for="result-label">Input:</label>
+              <label id="result">Please enter a valid input.</label>
+            </div>
+          </form>
+          <div class="address">
+            <div id="restaurants-display"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map">
+        <div id="map"></div>
+      </section>
+    </section>
+
+    <footer>
+      <p>
+        PIZZA RADAR Created by: Peter Van, Kenny Tran, Sam Le , Abhinav Arora
+      </p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script defer src="js/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT8_8cCx9L5rbooqW26KV5jDXTHANqOMI&"></script>
+  </body>
+</html>
