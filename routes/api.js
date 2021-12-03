@@ -14,6 +14,11 @@ let userLocationData = {
     antarctica: 0,
 };
 
+let randomLocation = {
+    name: "Lampost Pizza",
+    yelpLink: "https://www.yelp.com/biz/lamppost-pizza-fountain-valley",
+};
+
 router.get("/user", (req, res) => {
     if (req.query.location) {
         res.json(
@@ -22,6 +27,10 @@ router.get("/user", (req, res) => {
                 : "No data for location"
         );
     }
+});
+
+router.get("/location/random", (req, res) => {
+    res.send(randomLocation);
 });
 
 module.exports = router;
