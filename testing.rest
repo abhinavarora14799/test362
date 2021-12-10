@@ -1,8 +1,8 @@
-### SECRET ROUTE GET http://localhost:3000/secret
+### SECRET ROUTE GET http://localhost:4000/secret
 
-### LOG OUT GET http://localhost:3000/logout
+### LOG OUT GET http://localhost:4000/logout
 
-### REGISTER USER POST http://localhost:3000/register Content-Type: application/json
+### REGISTER USER POST http://localhost:4000/register Content-Type: application/json
 
 {
 "user": {
@@ -11,19 +11,19 @@
 
 }
 
-### LOGIN SUCCESS POST http://localhost:3000/login Content-Type: application/json
+### LOGIN SUCCESS POST http://localhost:4000/login Content-Type: application/json
 
 {
 "username": "root1", "password": "toor"
 }
 
-### LOGIN FAILURE USER NOT EXIST POST http://localhost:3000/login Content-Type: application/json
+### LOGIN FAILURE USER NOT EXIST POST http://localhost:4000/login Content-Type: application/json
 
 {
 "username": "tutu", "password": "tutu"
 }
 
-### LOGIN FAILURE WRONG PASSWORD POST http://localhost:3000/login Content-Type: application/json
+### LOGIN FAILURE WRONG PASSWORD POST http://localhost:4000/login Content-Type: application/json
 
 {
 "username": "root1", "password": "toorA"
