@@ -14,10 +14,36 @@ let userLocationData = {
     antarctica: 0,
 };
 
-let randomLocation = {
-    name: "Lampost Pizza",
-    yelpLink: "https://www.yelp.com/biz/lamppost-pizza-fountain-valley",
-};
+let randomLocation = [
+    {
+        name: "Lampost Pizza",
+        yelpLink: "https://www.yelp.com/biz/lamppost-pizza-fountain-valley",
+    },
+    {
+        name: "Gina Maria's Pizzeria",
+        yelpLink: "https://www.yelp.com/biz/gina-marias-pizzeria-placentia",
+    },
+    {
+        name: "Fuoco Pizzeria Napoletana",
+        yelpLink:
+            "https://www.yelp.com/biz/fuoco-pizzeria-napoletana-fullerton?osq=pizza",
+    },
+    {
+        name: "Papa Pizza Pie",
+        yelpLink:
+            "https://www.yelp.com/biz/papa-pizza-pie-fullerton-3?osq=pizza",
+    },
+    {
+        name: "Two Saucy Broads Pizza & Beer Parlor",
+        yelpLink:
+            "https://www.yelp.com/biz/two-saucy-broads-pizza-and-beer-parlor-fullerton?osq=pizza",
+    },
+    {
+        name: "Lampost Pizza",
+        yelpLink:
+            "https://www.yelp.com/biz/brooklynz-pizza-fullerton?osq=pizza",
+    },
+];
 
 router.get("/user", (req, res) => {
     if (req.query.location) {
@@ -30,7 +56,8 @@ router.get("/user", (req, res) => {
 });
 
 router.get("/location/random", (req, res) => {
-    res.send(randomLocation);
+    let randomIndex = Math.floor(Math.random() * randomLocation.length);
+    res.send({ randomIndex });
 });
 
 module.exports = router;

@@ -5,3 +5,11 @@ exports.isContainAPIKey = (req, res, next) => {
     }
     res.status(400).send("You are not authorized");
 };
+
+exports.checkAuthentication = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.redirect("/login");
+    }
+};

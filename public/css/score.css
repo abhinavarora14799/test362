@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(175, 59, 59);
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .center h1 {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  
+  .txt_field {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .congrats-txt {
+    background: linear-gradient(
+      to right,
+      rgb(202, 120, 120) 20%,
+      #e79417 30%,
+      #dd1fd4 70%,
+      rgb(212, 138, 89) 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-emphasis-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+    font-weight: bold;
+  }
+  
+  @keyframes textShine {
+    to {
+      background-position: 200%;
+    }
+  }
+  

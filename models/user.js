@@ -13,7 +13,7 @@ class User {
                 }
 
                 if (result.length > 0) {
-                    console.log("Username already existed");
+                    console.log("REGISTER ERROR: Username already existed");
                     done("Username already existed");
                     return;
                 }

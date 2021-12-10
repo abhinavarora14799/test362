@@ -141,7 +141,7 @@ footer {
 
 .location-section .button {
   margin-top: 3px;
-  padding: 0.3vh;
+  padding: 0.5vh;
   background-color: #af3b3b;
   color: white;
   border-radius: 8px;
@@ -208,3 +208,14 @@ footer {
   height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
+
+.headerUsername {
+  color: white;
+  border: 3px solid;
+  width: auto;
+  margin: auto;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
