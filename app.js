@@ -17,46 +17,50 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // ---------------------- SESSION STORE SETUP ----------------------
-// const sessionStore = new MySQLStore({}, db);
-// app.use(
-//     session({
-//         secret: process.env.SESSION_SECRET_KEY,
-//         resave: false,
-//         saveUninitialized: false,
-//         store: sessionStore,
-//         cookie: {
-//             maxAge: 1000 * 60 * 60, // 1 hours cookie expiration date
-//         },
-//     })
-// );
+const sessionStore = new MySQLStore({}, db);
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET_KEY,
+        resave: false,
+        saveUninitialized: false,
+        store: sessionStore,
+        cookie: {
+            maxAge: 1000 * 60 * 60, // 1 hours cookie expiration date
+        },
+    })
+);
 
-// // ---------------------- PASSPORT CONFIGURATION ----------------------
+// ---------------------- PASSPORT CONFIGURATION ----------------------
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(localStrategy);
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-// passport.use(localStrategy);
+passport.serializeUser((user, done) => {
+    done(null, user);
+});
 
-// passport.serializeUser((user, done) => {
-//     done(null, user.id);
-// });
-
-// passport.deserializeUser((id, done) => {
-//     db.query("SELECT * FROM user WHERE id=?", [id], (err, result) => {
-//         if (err) {
-//             done(err);
-//             return;
-//         }
-//         user = result[0];
-//         done(err, user.id);
-//     });
-// });
-
+passport.deserializeUser((user, done) => {
+    db.query("SELECT * FROM user WHERE id=?", [user.id], (err, result) => {
+        if (err) {
+            done(err);
+            return;
+        }
+        user = result[0];
+        done(err, user);
+    });
+});
+app.use((req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
 // ---------------------- ROUTES ----------------------
 const userRoutes = require("./routes/users");
 const APIRoutes = require("./routes/api");
+const scoreRoutes = require("./routes/scores");
 
 app.use(userRoutes);
 app.use("/api", APIRoutes);
+app.use(scoreRoutes);
 
 // -----------------------------------------------------
 app.get("/", (req, res) => {
