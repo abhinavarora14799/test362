@@ -57,7 +57,7 @@ router.get("/user", (req, res) => {
 
 router.get("/location/random", (req, res) => {
     let randomIndex = Math.floor(Math.random() * randomLocation.length);
-    res.send({ randomIndex });
+    res.send(randomLocation[randomIndex]);
 });
 
 module.exports = router;
