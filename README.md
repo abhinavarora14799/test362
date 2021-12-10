@@ -10,7 +10,7 @@
 
 ## **Website Link**
 
-* https://pizza-radar.herokuapp.com/
+* https://pizzaradar.herokuapp.com/
 
 ### ***Team Members: Peter Van, Kenny Tran, Sam Le , Abhinav Arora.***
 
@@ -19,9 +19,9 @@
 
 ## ***Iteration Milestone***
 
-#### ***Iteration 4***
+#### ***Iteration 5***
 
-* In this Iteration we've worked on deployment of our website, we Have also updated our homepage, and titlebar, and sort by feature, and reset button implementation.
+* In this Iteration as we had to work with another group **(Group#4)** and add combine both of those projects we've implemented that my allowing the users who play the game to get a pizza break by accessing out PizzaRadar Website, and we've also updated a new scoreboard, which will display user's scores from the game into out website.
 
 ## ***User Base***
 * The people who may use the output of this project includes anybody looking for nearby pizza locations that may be interested in local pizza restaurants with directions, ratings, recommendations, etc.
@@ -29,10 +29,23 @@
 
 ## ***Installation***
 ***Please Install JS, Node, on your Debugger Before Running the following commands***
-```bash
-npm install
-npm install dotenv (if needed)
-node app
+
+ ```bash
+ 1. Install xampp, open xampp control panel and start apache and mysql
+2. Download phpmyadmin and unzip
+3. Go here http://localhost/phpmyadmin/  (should see a webpage with phpmyadmin top left)
+4.Create database, use pizza easy installation.
+5. Create table, name: user, columns: 3
+6. types of each respectively is int, varchar, varchar , and length/values of each respectively is 10, 255, 255
+7. id -- attributes --> unsigned id --> A_I b/t index and comments --> check the box --> id should now have auto_increment.
+8.Go back to database page by clicking phpmyadmin top left databases.
+9.Go to your created database and click Check privileges.
+10. Find user root, host name: localhost, click edit privileges
+11. Change password near top, can use simple password like root.
+12. Open vscode run, npm install
+13. Go to .env file, port = 3000, host user, password of database should be whatever the user chose.
+14. npm install dotenv
+15 .node app
 ```
 ***That Should Open the link to the livebrowser or livehost***  
 
